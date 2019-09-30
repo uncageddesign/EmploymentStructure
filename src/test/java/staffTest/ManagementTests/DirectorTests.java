@@ -21,6 +21,12 @@ public class DirectorTests {
     }
 
     @Test
+    public void canChangeName(){
+        director.setName("Lincoln Lee");
+        assertEquals("Lincoln Lee", director.getName());
+    }
+
+    @Test
     public void hasNI(){
         assertEquals("pp110011p", director.getNatInsurance());
     }
@@ -32,12 +38,13 @@ public class DirectorTests {
 
     @Test
     public void canRaiseSalary(){
-        assertEquals(31000.00, director.raiseSalary(1000.00), 0.01);
+        director.raiseSalary(1000.00);
+        assertEquals(31000.00, director.getSalary(), 0.01);
     }
 
     @Test
     public void canCalculateBonus(){
-        assertEquals(600.00, director.payBonus(0.02), 0.01);
+        assertEquals(600.00, director.payBonus(), 0.01);
     }
 
     @Test

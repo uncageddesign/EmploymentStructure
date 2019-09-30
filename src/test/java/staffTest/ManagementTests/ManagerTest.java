@@ -20,6 +20,12 @@ public class ManagerTest {
     }
 
     @Test
+    public void canChangeName(){
+        manager.setName("Nina Sharp");
+        assertEquals("Nina Sharp", manager.getName());
+    }
+
+    @Test
     public void hasNI(){
         assertEquals("ww110011w", manager.getNatInsurance());
     }
@@ -31,12 +37,13 @@ public class ManagerTest {
 
     @Test
     public void canRaiseSalary(){
-        assertEquals(26000.00, manager.raiseSalary(1000.00), 0.01);
+        manager.raiseSalary(1000.00);
+        assertEquals(26000.00, manager.getSalary(), 0.01);
     }
 
     @Test
     public void canCalculateBonus(){
-        assertEquals(250.00, manager.payBonus(0.01), 0.01);
+        assertEquals(250.00, manager.payBonus(), 0.01);
     }
 
     @Test

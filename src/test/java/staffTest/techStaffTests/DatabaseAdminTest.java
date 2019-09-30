@@ -3,7 +3,6 @@ package staffTest.techStaffTests;
 import org.junit.Before;
 import org.junit.Test;
 import staff.techStaff.DatabaseAdmin;
-import staff.techStaff.Developer;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,6 +21,12 @@ public class DatabaseAdminTest {
     }
 
     @Test
+    public void canChangeName(){
+        databaseAdmin.setName("Charlie Francis");
+        assertEquals("Charlie Francis", databaseAdmin.getName());
+    }
+
+    @Test
     public void hasNI(){
         assertEquals("aa110011a", databaseAdmin.getNatInsurance());
     }
@@ -33,12 +38,13 @@ public class DatabaseAdminTest {
 
     @Test
     public void canRaiseSalary(){
-        assertEquals(25000.00, databaseAdmin.raiseSalary(1000.00), 0.01);
+        databaseAdmin.raiseSalary(1000.00);
+        assertEquals(25000.00, databaseAdmin.getSalary(), 0.01);
     }
 
     @Test
     public void canCalculateBonus(){
-        assertEquals(240.00, databaseAdmin.payBonus(0.01), 0.01);
+        assertEquals(240.00, databaseAdmin.payBonus(), 0.01);
     }
 
 }

@@ -16,6 +16,12 @@ public abstract class Employee {
         return name;
     }
 
+    public void setName(String name) {
+        if(name != null && name != "") {
+            this.name = name;
+        }
+    }
+
     public String getNatInsurance() {
         return natInsurance;
     }
@@ -24,11 +30,17 @@ public abstract class Employee {
         return salary;
     }
 
-    public Double raiseSalary(Double raise) {
-        return this.salary + raise;
+    public void raiseSalary(Double raise) {
+        if (raise >= 0) {
+           this.salary += raise;
+        }
     }
 
-    public double payBonus(double bonus) {
-        return this.salary * bonus;
+//    public Double getRaiseSalary(){
+//        return raiseSalary();
+//    }
+
+    public double payBonus() {
+        return this.salary * 0.01;
     }
 }
