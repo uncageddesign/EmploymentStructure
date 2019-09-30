@@ -1,7 +1,7 @@
-package staffTest;
+package staffTest.ManagementTests;
 import org.junit.Before;
 import org.junit.Test;
-import staff.Manager;
+import staff.Management.Manager;
 
 import static org.junit.Assert.assertEquals;
 
